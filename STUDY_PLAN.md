@@ -1,14 +1,41 @@
 # アルゴリズム学習プラン（12週間）
 
 C++ で基礎データ構造から DP までを 12 週間で一通り学ぶためのプラン。
-各週 **必須①②** を解き、余裕があれば **③** に挑戦する。
+各週 **必須①②** を解き、余裕があれば **③** に挑戦する（③ は 3 時間の枠外）。
 
-## 進め方
+## 毎週 3 時間の使い方
 
-- [ ] 問題を解く前に、テーマの基本（計算量・典型操作）を確認する
-- [ ] まず自力で 30 分考える → 分からなければ解説を読む → **何も見ずに書き直す**
-- [ ] 解いたら計算量（時間 / 空間）をメモする
-- [ ] 解けなかった問題は翌週にもう一度解く
+| 時間 | 内容 |
+| ---- | ---- |
+| 0:00–0:45 | 概念復習 |
+| 0:45–1:30 | C++で自作 |
+| 1:30–2:45 | 必須 2 問 |
+| 2:45–3:00 | 復習 |
+
+### 0:00–0:45 概念復習
+
+その週のデータ構造について、何も見ずに紙に書けるようにする。
+
+- 何に使う？
+- 操作の計算量は？
+- どんな問題で使う？
+
+### 0:45–1:30 C++で自作
+
+いきなり STL を使わず、一度自分で実装してから STL を使う。
+例: heap 週なら `priority_queue` を使う前に parent → left/right child → push → pop → heapify を自分で書く。
+各週の「自作」を参照。
+
+### 1:30–2:45 必須 2 問
+
+- 1 問あたり 30〜40 分
+- 15〜20 分考えて全く方針が出なかったら、解説を見て OK
+- 解説を読んで AC したら終わりにしない。**コードを閉じて、もう一度自力で書く**
+
+### 2:45–3:00 復習
+
+- その週の「メモ」と下の「振り返り」表を埋める
+- 解けなかった問題は翌週もう一度解く
 
 ## 一覧
 
@@ -33,6 +60,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 学ぶこと: 入出力（`cin` / `cout`）、`int` と `long long`、ループ、O 記法の感覚
 
+自作: 簡単な入出力と、O(n) / O(n²) のループを書いて n を増やしたときの実行時間を比べる
+
 - [ ] ① [AtCoder PracticeA – Welcome to AtCoder](https://atcoder.jp/contests/practice/tasks/practice_1)
 - [ ] ② [AtCoder ABC086A – Product](https://atcoder.jp/contests/abc086/tasks/abc086_a)
 - [ ] ③ [AtCoder ABC081B – Shift only](https://atcoder.jp/contests/abc081/tasks/abc081_b)
@@ -42,6 +71,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 ## Week 2: Array / vector / Two Pointers
 
 学ぶこと: `std::vector` の操作、累積和、左右 2 本のポインタで O(n) にする考え方
+
+自作: 可変長配列（`push_back` / 容量を倍にして拡張 / 添字アクセス）
 
 - [ ] ① [1480 – Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
 - [ ] ② [167 – Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
@@ -53,6 +84,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 学ぶこと: ポインタ操作、ダミーノード、fast / slow ポインタ（Floyd の循環検出）
 
+自作: 単方向リスト（`push_front` / 削除 / 反転）
+
 - [ ] ① [206 – Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
 - [ ] ② [21 – Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
 - [ ] ③ [141 – Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
@@ -62,6 +95,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 ## Week 4: Stack / Queue
 
 学ぶこと: `std::stack` / `std::queue`、LIFO と FIFO、補助スタックで状態を持つ設計
+
+自作: 配列で stack（push / pop / top）、リングバッファで queue（push / pop / front）
 
 - [ ] ① [20 – Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 - [ ] ② [232 – Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
@@ -73,6 +108,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 学ぶこと: `unordered_map` / `unordered_set` と `map` / `set` の違い、O(1) 検索でループを減らす
 
+自作: チェイン法のハッシュセット（insert / find / erase）
+
 - [ ] ① [1 – Two Sum](https://leetcode.com/problems/two-sum/)
 - [ ] ② [217 – Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
 - [ ] ③ [49 – Group Anagrams](https://leetcode.com/problems/group-anagrams/)
@@ -82,6 +119,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 ## Week 6: Sort / Binary Search
 
 学ぶこと: `std::sort`、二分探索の境界条件、`lower_bound` / `upper_bound`
+
+自作: マージソート、`lower_bound` 相当の二分探索
 
 - [ ] ① [704 – Binary Search](https://leetcode.com/problems/binary-search/)
 - [ ] ② [35 – Search Insert Position](https://leetcode.com/problems/search-insert-position/)
@@ -93,6 +132,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 学ぶこと: 再帰の終了条件、DFS（前順・中順・後順）、BST の性質（中順で昇順）
 
+自作: BST（insert / find / 中順走査）
+
 - [ ] ① [104 – Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 - [ ] ② [94 – Binary Tree Inorder Traversal](https://leetcode.com/problems/binary-tree-inorder-traversal/)
 - [ ] ③ [98 – Validate Binary Search Tree](https://leetcode.com/problems/validate-binary-search-tree/)
@@ -102,6 +143,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 ## Week 8: Heap / Priority Queue
 
 学ぶこと: `std::priority_queue`（デフォルトは最大ヒープ）、`greater<>` で最小ヒープ、サイズ k のヒープ
+
+自作: 二分ヒープ（parent → left/right child → push → pop → heapify）
 
 - [ ] ① [703 – Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
 - [ ] ② [215 – Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
@@ -113,6 +156,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 学ぶこと: 隣接リスト・グリッドの表現、BFS で最短距離、DFS で連結成分
 
+自作: 隣接リストでグラフを作り、BFS（キュー）と DFS（再帰）を書く
+
 - [ ] ① [AtCoder ABC007C – 幅優先探索](https://atcoder.jp/contests/abc007/tasks/abc007_3)
 - [ ] ② [200 – Number of Islands](https://leetcode.com/problems/number-of-islands/)
 - [ ] ③ [733 – Flood Fill](https://leetcode.com/problems/flood-fill/)
@@ -122,6 +167,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 ## Week 10: Graph応用
 
 学ぶこと: Union-Find（経路圧縮・union by rank）、トポロジカルソート、Dijkstra 法
+
+自作: Union-Find（経路圧縮・union by size）、ヒープを使った Dijkstra 法
 
 - [ ] ① [AtCoder ATC001 B – Union Find](https://atcoder.jp/contests/atc001/tasks/unionfind_a)
 - [ ] ② [207 – Course Schedule](https://leetcode.com/problems/course-schedule/)
@@ -133,6 +180,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 学ぶこと: 状態と遷移の定義、配る DP / 貰う DP、メモ化再帰との対応
 
+自作: 同じ問題をメモ化再帰とボトムアップ DP の両方で書く
+
 - [ ] ① [AtCoder DP A – Frog 1](https://atcoder.jp/contests/dp/tasks/dp_a)
 - [ ] ② [70 – Climbing Stairs](https://leetcode.com/problems/climbing-stairs/)
 - [ ] ③ [AtCoder DP C – Vacation](https://atcoder.jp/contests/dp/tasks/dp_c)
@@ -142,6 +191,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 ## Week 12: DP＋総仕上げ
 
 学ぶこと: ナップサック DP、個数制限なしの DP、これまでの苦手問題の解き直し
+
+自作: 0-1 ナップサックを 2 次元 DP で書き、1 次元配列に圧縮する
 
 - [ ] ① [198 – House Robber](https://leetcode.com/problems/house-robber/)
 - [ ] ② [AtCoder DP D – Knapsack 1](https://atcoder.jp/contests/dp/tasks/dp_d)
