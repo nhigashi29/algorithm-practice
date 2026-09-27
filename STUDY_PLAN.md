@@ -3,6 +3,8 @@
 C++ で基礎データ構造から DP までを 12 週間で一通り学ぶためのプラン。
 各週 **必須①②** を解き、余裕があれば **③** に挑戦する（③ は 3 時間の枠外）。
 
+進捗のチェックは、対応するローカル演習の実装・動作確認、または本人の完了申告を表す。オンラインジャッジでの AC とは区別し、問題の形式との差や未完了の自作課題はメモに残す。
+
 ## 毎週 3 時間の使い方
 
 | 時間 | 内容 |
@@ -66,7 +68,7 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 - [x] ② [AtCoder ABC086A – Product](https://atcoder.jp/contests/abc086/tasks/abc086_a)
 - [ ] ③ [AtCoder ABC081B – Shift only](https://atcoder.jp/contests/abc081/tasks/abc081_b)
 
-メモ: Week 1 の基本学習・必須問題は完了。次回は Week 2 から進める。
+メモ: Week 1 の基本学習・必須問題は本人申告で完了。任意③は未確認。
 
 ## Week 2: Array / vector / Two Pointers
 
@@ -74,11 +76,18 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 自作: 可変長配列（`push_back` / 容量を倍にして拡張 / 添字アクセス）
 
-- [ ] ① [1480 – Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
-- [ ] ② [167 – Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
+- [x] ① [1480 – Running Sum of 1d Array](https://leetcode.com/problems/running-sum-of-1d-array/)
+- [x] ② [167 – Two Sum II](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/)
 - [ ] ③ [26 – Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
 
 メモ:
+
+- 必須①②に相当するローカル演習は実装・動作確認済み（`week02/running_sum.cpp`、`week02/two_sum.cpp`）。オンラインジャッジへの提出・AC は未確認。②はローカル演習では添字を0始まりで出力する。
+- `vector` の入力、参照、size / capacity、拡張時のコピーと償却 O(1) を学習済み。
+- 可変長配列の自作は仕組みの説明まで。実装は未着手。
+- 任意③は別配列を使う実装まで。元の配列に詰める実装は未完了。
+- 必須問題の目標ラインには到達。追加の「0を末尾へ移動」は未着手で、必須には含めない。
+- 次回はこの区切りを案内し、未完了課題を補うか Week 3 に進むか本人の希望に合わせる。
 
 ## Week 3: Linked List
 
@@ -206,8 +215,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 | Week | 解けた問題数 | 苦手だったこと | 解き直す問題 |
 | ---- | ----------- | ------------- | ----------- |
-| 1 | / 3 | | |
-| 2 | / 3 | | |
+| 1 | 2 / 3（本人申告） | 未記録 | 未記録 |
+| 2 | 2 / 3（対応するローカル演習） | 空の vector への添字アクセス、未初期化変数、read / write の役割 | ③を元の配列に詰める方法で再実装 |
 | 3 | / 3 | | |
 | 4 | / 3 | | |
 | 5 | / 3 | | |
