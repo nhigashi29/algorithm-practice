@@ -62,11 +62,11 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 自作: 簡単な入出力と、O(n) / O(n²) のループを書いて n を増やしたときの実行時間を比べる
 
-- [ ] ① [AtCoder PracticeA – Welcome to AtCoder](https://atcoder.jp/contests/practice/tasks/practice_1)
-- [ ] ② [AtCoder ABC086A – Product](https://atcoder.jp/contests/abc086/tasks/abc086_a)
+- [x] ① [AtCoder PracticeA – Welcome to AtCoder](https://atcoder.jp/contests/practice/tasks/practice_1)
+- [x] ② [AtCoder ABC086A – Product](https://atcoder.jp/contests/abc086/tasks/abc086_a)
 - [ ] ③ [AtCoder ABC081B – Shift only](https://atcoder.jp/contests/abc081/tasks/abc081_b)
 
-メモ:
+メモ: Week 1 の基本学習・必須問題は完了。次回は Week 2 から進める。
 
 ## Week 2: Array / vector / Two Pointers
 
