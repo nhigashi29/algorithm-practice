@@ -95,11 +95,21 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 自作: 単方向リスト（`push_front` / 削除 / 反転）
 
-- [ ] ① [206 – Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
-- [ ] ② [21 – Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
-- [ ] ③ [141 – Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
+- [x] ① [206 – Reverse Linked List](https://leetcode.com/problems/reverse-linked-list/)
+- [x] ② [21 – Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/)
+- [x] ③ [141 – Linked List Cycle](https://leetcode.com/problems/linked-list-cycle/)
 
 メモ:
+
+- 導入演習 `week03/linked_list_practice.cpp` は、ノードの確保、参照渡しによる `push_front`、先頭からの走査を実装。コンパイルと通常例・空・1要素・負数や重複を含む入力で値の出力を確認済み。
+- 導入演習は完了：確保したノードの `delete` と出力末尾の改行を実装。通常例・空・1要素で再検証し、AddressSanitizer / UndefinedBehaviorSanitizer の診断なしを確認。
+- 必須①に対応するローカル演習 `week03/reverse_linked_list.cpp` は実装・動作確認済み。入力順に構築した既存リストの `next` を付け替えて反転し、出力後に解放する。元の問題の関数形式に標準入出力とリスト構築・解放を加えた形式。オンラインジャッジへの提出・AC は未確認。
+- 通常例・空・1要素・負数と重複・上限1000要素で期待する出力を確認。AddressSanitizer / UndefinedBehaviorSanitizer の診断なし。ループ内で `head = curr` と更新して最後のノードを返す別解も正しい。
+- 必須②に対応するローカル演習 `week03/merge_sorted_lists.cpp` は実装・動作確認済み。ダミーノードを使い、既存ノードをつなぎ替えてマージ。残りを `tail->next = rest` でまとめて接続する修正を確認。元の問題の関数形式に標準入出力とリスト構築・解放を加えた形式。オンラインジャッジへの提出・AC は未確認。
+- 通常例・残りが複数ある場合（両側）・片方空（両側）・両方空・重複・負数・各1000要素の全9ケースで期待する出力を確認。AddressSanitizer / UndefinedBehaviorSanitizer の診断なし。マージは時間 O(N+M)、追加メモリ O(1)。
+- 任意③に対応するローカル演習 `week03/linked_list_cycle.cpp` は実装・動作確認済み。slow / fast のアドレス比較で循環を判定。元の問題の関数形式に、標準入力・0始まりの循環先指定（-1は循環なし）・構築・出力・解放を加えた形式。オンラインジャッジへの提出・AC は未確認。
+- 空・1要素・自己循環・先頭/途中/末尾への循環・循環なし・重複値・上限1000要素の全14ケースで期待する出力を確認。AddressSanitizer / UndefinedBehaviorSanitizer の診断なし。判定関数は時間 O(N)、追加メモリ O(1)。テスト用 main では vector にノードのアドレスを保存して各ノードを1回ずつ解放。
+- 必須①②と任意③を完了し、Week 3 の問題3問は完了。自作課題のリストからの削除は未完了。次回は Week 4「Stack / Queue」の導入から。自作課題の復習を希望する場合はそちらを扱う。
 
 ## Week 4: Stack / Queue
 
@@ -112,6 +122,8 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 - [ ] ③ [155 – Min Stack](https://leetcode.com/problems/min-stack/)
 
 メモ:
+
+- 導入課題：`week04/stack_practice.cpp` で固定長配列によるスタック（push / pop / top）を自作する。課題提示段階で、実装・動作確認は未完了。次回はこの課題から。
 
 ## Week 5: Hash / map / set
 
@@ -217,7 +229,7 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 | ---- | ----------- | ------------- | ----------- |
 | 1 | 2 / 3（本人申告） | 未記録 | 未記録 |
 | 2 | 2 / 3（対応するローカル演習） | 空の vector への添字アクセス、未初期化変数、read / write の役割 | ③を元の配列に詰める方法で再実装 |
-| 3 | / 3 | | |
+| 3 | 3 / 3（対応するローカル演習） | 反転後の先頭ポインタの返却、マージの残りの接続、循環を作るループの境界（いずれも修正済み） | 未記録 |
 | 4 | / 3 | | |
 | 5 | / 3 | | |
 | 6 | / 3 | | |
