@@ -117,13 +117,17 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 
 自作: 配列で stack（push / pop / top）、リングバッファで queue（push / pop / front）
 
-- [ ] ① [20 – Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
+- [x] ① [20 – Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 - [ ] ② [232 – Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/)
 - [ ] ③ [155 – Min Stack](https://leetcode.com/problems/min-stack/)
 
 メモ:
 
-- 導入課題：`week04/stack_practice.cpp` で固定長配列によるスタック（push / pop / top）を自作する。課題提示段階で、実装・動作確認は未完了。次回はこの課題から。
+- 導入課題 `week04/stack_practice.cpp` は完了。固定長配列で push / pop / top を実装し、空の top は EMPTY、空の pop は何もしない仕様を確認。
+- 添字を0始まりに修正し、空の pop で要素数が負になる問題も修正済み。提示例・空での連続操作・1000回の追加・値の上下限・999要素での top・1000操作のランダム入力の全6ケースで期待する出力を確認。AddressSanitizer / UndefinedBehaviorSanitizer の診断なし。各操作は時間 O(1)。
+- 必須①に対応するローカル演習 `week04/valid_parentheses.cpp` は実装・動作確認済み。std::stack<char> で開き括弧を保持し、閉じ括弧を読んだ際の空チェック・種類の対応チェック、走査後の空チェックを実装。元の問題の関数形式に対し、標準入力で長さ1〜1000の括弧列を受け取り true / false を出力する形式。オンラインジャッジへの提出・AC は未確認。
+- 正しい入れ子・複数の括弧の組・種類の不一致・余分な閉じ括弧・閉じていない括弧・長さ1000の入力を含む全12ケースで期待する出力を確認。AddressSanitizer / UndefinedBehaviorSanitizer の診断なし。時間 O(N)、追加メモリ O(N)。
+- 必須②、任意③、リングバッファによる queue の自作は未完了。次回は queue の FIFO と必須②「Implement Queue using Stacks」に向けた導入から。
 
 ## Week 5: Hash / map / set
 
@@ -230,7 +234,7 @@ C++ で基礎データ構造から DP までを 12 週間で一通り学ぶた�
 | 1 | 2 / 3（本人申告） | 未記録 | 未記録 |
 | 2 | 2 / 3（対応するローカル演習） | 空の vector への添字アクセス、未初期化変数、read / write の役割 | ③を元の配列に詰める方法で再実装 |
 | 3 | 3 / 3（対応するローカル演習） | 反転後の先頭ポインタの返却、マージの残りの接続、循環を作るループの境界（いずれも修正済み） | 未記録 |
-| 4 | / 3 | | |
+| 4 | 1 / 3（対応するローカル演習。導入のスタック自作も完了） | 配列の0始まりの添字、空の pop による要素数の減少、括弧判定で不正な閉じ括弧を読み飛ばす分岐（いずれも修正済み） | 未記録 |
 | 5 | / 3 | | |
 | 6 | / 3 | | |
 | 7 | / 3 | | |
